@@ -47,19 +47,21 @@ Aplikasi ini dibangun menggunakan arsitektur **Express.js (Backend)** dan **Vani
 
 ## 📂 Struktur Folder Proyek
 
+```text
 web-voltora/
-├── config/ # Konfigurasi koneksi database MySQL
-├── controllers/ # Logika pengontrol API (Auth, Category, Product, User)
-├── database/ # Skema SQL database dan seeder data awal
-├── middleware/ # Autentikasi, otorisasi peran, dan multer upload
-├── models/ # Kelas model database untuk operasi MySQL
-├── public/ # Berkas statis frontend (HTML, CSS, JS, Gambar)
-│ ├── admin/ # Halaman dasbor manajemen (products, categories, users)
-│ ├── auth/ # Halaman login
-│ ├── css/ # File input & output Tailwind CSS
-│ ├── js/ # File logika JavaScript frontend
-│ └── uploads/ # Folder penyimpanan gambar produk hasil upload
-├── routes/ # Routing endpoint API dan halaman web
-├── server.js # Entry point utama aplikasi Express.js
-├── .gitignore # File konfigurasi file yang diabaikan oleh Git
-└── package.json # Konfigurasi dependensi npm & script run
+├── config/              # Konfigurasi koneksi database MySQL
+├── controllers/         # Logika pengontrol API (Auth, Category, Product, User)
+├── database/            # Skema SQL database dan seeder data awal
+├── middleware/          # Autentikasi, otorisasi peran, dan multer upload
+├── models/              # Kelas model database untuk operasi MySQL
+├── public/              # Berkas statis frontend (HTML, CSS, JS, Gambar)
+│   ├── admin/           # Halaman dasbor manajemen (products, categories, users)
+│   ├── auth/            # Halaman login
+│   ├── css/             # File input & output Tailwind CSS
+│   ├── js/              # File logika JavaScript frontend
+│   └── uploads/         # Folder penyimpanan gambar produk hasil upload
+├── routes/              # Routing endpoint API dan halaman web
+├── server.js            # Entry point utama aplikasi Express.js
+├── .gitignore           # File konfigurasi file yang diabaikan oleh Git
+└── package.json         # Konfigurasi dependensi npm & script run
+```
