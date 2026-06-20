@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Voltora</title>
+        <link rel="stylesheet" href="../css/output.css" />
+    </head>
+
+    <body id="home">
+        <!-- Navbar -->
+        <nav
+            class="bg-neutral-primary fixed w-full z-20 top-0 inset-s-0 border-b border-default"
+        >
+            <div
+                class="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4"
+            >
+                <a
+                    href="#home"
+                    class="flex items-center space-x-3 rtl:space-x-reverse"
+                >
+                    <img src="/images/logo.svg" alt="Logo" class="h-7 w-7" />
+                    <span
+                        class="self-center text-xl text-cyan-700 font-bold whitespace-nowrap"
+                        >Voltora</span
+                    >
+                </a>
+                <button
+                    data-collapse-toggle="navbar-default"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                    aria-controls="navbar-default"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Open main menu</span>
+                    <svg
+                        class="w-6 h-6"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linecap="round"
+                            stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14"
+                        />
+                    </svg>
+                </button>
+                <div
+                    class="hidden w-full md:block md:w-auto"
+                    id="navbar-default"
+                >
+                    <ul
+                        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary"
+                    >
+                        <li>
+                            <a
+                                href="#home"
+                                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-cyan-600 md:p-0"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#products"
+                                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-cyan-600 md:p-0"
+                                >Products</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#about"
+                                class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-cyan-600 md:p-0"
+                                >About</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Heroes -->
+        <div
+            class="bg-cyan-50 w-full h-screen flex flex-col items-center justify-center gap-4 px-4 text-center"
+        >
+            <img
+                src="../images/logo.svg"
+                class="h-20 md:h-28"
+                alt="Voltora Logo"
+            />
+
+            <div class="flex flex-col items-center justify-between gap-3">
+                <h1 class="text-4xl md:text-6xl font-bold text-cyan-700">
+                    VOLTORA ELECTRONIC
+                </h1>
+                <p class="text-xl md:text-3xl font-medium text-cyan-600">
+                    COOL & SAFETY
+                </p>
+            </div>
+
+            <a
+                href="#products"
+                class="flex items-center justify-center gap-2 text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            >
+                View Products
+                <svg
+                    class="w-4 h-4 text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                >
+                    <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Products -->
+        <div class="container mx-auto px-5 py-20" id="products">
+            <div class="flex flex-col gap-2 text-center mb-6">
+                <h2 class="text-3xl text-heading font-semibold">Products</h2>
+                <p class="text-xl md:text-2xl text-body font-medium">
+                    We have a wide range of products
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <!-- Category Button -->
+                <div
+                    id="category-buttons"
+                    class="flex flex-wrap gap-3 items-center justify-center md:justify-start"
+                >
+                    <button
+                        type="button"
+                        data-category-id="all"
+                        class="text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none"
+                    >
+                        All
+                    </button>
+                </div>
+
+                <!-- Card List -->
+                <div
+                    id="product-card-list"
+                    class="w-full flex flex-wrap gap-6 justify-center md:justify-start min-h-60"
+                >
+                    <!-- Cards will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us -->
+        <div class="container mx-auto px-5 py-20" id="about">
+            <div class="flex flex-col gap-2 text-center mb-6">
+                <h2 class="text-3xl text-heading font-semibold">About Us</h2>
+                <p class="text-xl md:text-2xl text-body font-medium">
+                    Lets Introduce Our Company
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-6 mt-5 py-4 items-center">
+                <div class="w-full md:w-1/2 space-y-4">
+                    <p
+                        class="text-body font-medium text-justify indent-8 leading-relaxed"
+                    >
+                        Selamat datang di Voltora Electronic, destinasi utama
+                        dan terpercaya Anda untuk memenuhi segala kebutuhan
+                        perangkat elektronik modern rumah tangga. Kami berdiri
+                        dengan sebuah komitmen yang kuat serta visi jangka
+                        panjang untuk selalu menyediakan ragam produk teknologi
+                        pilihan. Produk yang kami hadirkan tidak hanya dirancang
+                        untuk menawarkan inovasi terkini dan efisiensi kerja
+                        yang tinggi, melainkan juga sangat mengutamakan aspek
+                        keamanan maksimal (*safety*) serta kenyamanan tingkat
+                        tinggi (*cool*) saat digunakan oleh seluruh anggota
+                        keluarga Anda.
+                    </p>
+                    <p
+                        class="text-body font-medium text-justify indent-8 leading-relaxed"
+                    >
+                        Di era digital dan modernisasi yang bergerak dengan
+                        sangat cepat ini, kami sangat memahami bahwa perangkat
+                        elektronik telah bertransformasi menjadi bagian esensial
+                        yang tidak dapat dipisahkan dari produktivitas harian,
+                        efisiensi waktu, hingga penunjang gaya hidup yang nyaman
+                        di dalam rumah. Berangkat dari pemahaman tersebut,
+                        Voltora Electronic menerapkan standar sistem kurasi yang
+                        luar biasa ketat sebelum sebuah produk dapat masuk ke
+                        dalam katalog penjualan kami. Mulai dari perangkat
+                        pendingin udara, berbagai jenis kipas angin berefisiensi
+                        tinggi, hingga peralatan dapur utama seperti kulkas
+                        pintar, seluruhnya wajib lolos serangkaian uji
+                        standarisasi kelayakan kelistrikan yang ketat. Langkah
+                        ini kami lakukan demi memastikan bahwa setiap rupiah
+                        yang Anda investasikan mampu memberikan performa
+                        optimal, hemat konsumsi energi, dan yang terpenting
+                        adalah memberikan rasa aman jangka panjang tanpa
+                        kekhawatiran akan risiko kegagalan sistem kelistrikan.
+                    </p>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <img
+                        src="./images/shop.png"
+                        alt="Shop Image"
+                        class="w-full rounded-base shadow-sm"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="w-full h-fit bg-brand p-5 mt-10">
+            <div
+                class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+            >
+                <div
+                    class="flex flex-col sm:flex-row text-white gap-4 md:gap-8 items-center sm:items-start w-full md:w-auto"
+                >
+                    <div class="flex items-center gap-1.5">
+                        <svg
+                            class="w-5 h-5 text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"
+                            />
+                        </svg>
+                        <p class="text-sm md:text-base">08123456789</p>
+                    </div>
+
+                    <div class="flex items-center gap-1.5">
+                        <svg
+                            class="w-5 h-5 text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                                clip-rule="evenodd"
+                            />
+                        </svg>
+                        <p class="text-sm md:text-base">@voltora</p>
+                    </div>
+
+                    <div class="flex items-center gap-1.5">
+                        <svg
+                            class="w-5 h-5 text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M17 6h-2V5h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2h-.541A5.965 5.965 0 0 1 14 10v4a1 1 0 1 1-2 0v-4c0-2.206-1.794-4-4-4-.075 0-.148.012-.22.028C7.686 6.022 7.596 6 7.5 6A4.505 4.505 0 0 0 3 10.5V16a1 1 0 0 0 1 1h7v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3h5a1 1 0 0 0 1-1v-6c0-2.206-1.794-4-4-4Zm-9 8.5H7a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Z"
+                            />
+                        </svg>
+                        <p class="text-sm md:text-base">voltora@gmail.com</p>
+                    </div>
+                </div>
+
+                <p
+                    class="text-sm md:text-base font-medium text-white text-center md:text-right"
+                >
+                    &copy; 2026 Voltora. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+
+        <!-- Modals Image Product -->
+        <div
+            id="product-image-modal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center w-full h-full bg-black/80 backdrop-blur-sm"
+        >
+            <div
+                class="relative p-4 w-full max-w-4xl max-h-full flex flex-col items-center"
+            >
+                <!-- Konten Utama Modal -->
+                <div
+                    class="relative bg-transparent rounded-base shadow-sm max-w-fit"
+                >
+                    <!-- Wadah Gambar yang akan diisi secara dinamis oleh JavaScript -->
+                    <div
+                        class="overflow-hidden flex items-center justify-center"
+                    >
+                        <img
+                            id="modal-target-image"
+                            src=""
+                            alt="Preview Produk"
+                            class="max-w-full max-h-[80vh] rounded-base object-contain shadow-2xl"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script -->
+        <script src="/js/main.js"></script>
+        <script type="module" src="/js/indexProducts.js"></script>
+    </body>
+</html>

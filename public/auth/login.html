@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login - Voltora</title>
+        <link rel="stylesheet" href="/css/output.css" />
+    </head>
+    <body class="bg-cyan-50 min-h-screen flex items-center justify-center p-4">
+        <div
+            class="bg-white rounded-xl shadow-md max-w-4xl w-full flex overflow-hidden min-h-125"
+        >
+            <div
+                class="hidden md:flex md:w-1/2 bg-neutral-primary-soft items-center justify-center p-8 border-r border-default"
+            >
+                <img
+                    src="../images/auth.svg"
+                    alt="Login Illustration"
+                    class="max-w-full h-auto object-contain"
+                />
+            </div>
+
+            <div
+                class="w-full md:w-1/2 flex flex-col justify-center p-8 lg:p-12"
+            >
+                <!-- alert message -->
+                <div
+                    id="login-alert"
+                    class="hidden p-4 mb-4 text-sm rounded-base flex items-center gap-2 border"
+                    role="alert"
+                >
+                    <svg
+                        class="shrink-0 inline w-4 h-4"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                        />
+                    </svg>
+                    <div>
+                        <span
+                            id="login-alert-message"
+                            class="font-medium"
+                        ></span>
+                    </div>
+                </div>
+
+                <h1 class="text-2xl font-bold text-center text-heading mb-8">
+                    Login Page
+                </h1>
+
+                <div
+                    id="alert-container"
+                    class="hidden p-4 mb-4 text-sm rounded-base flex items-center gap-2"
+                    role="alert"
+                >
+                    <span id="alert-message" class="font-medium"></span>
+                </div>
+
+                <form id="loginForm" class="space-y-5">
+                    <div>
+                        <label
+                            for="username"
+                            class="block mb-2 text-sm font-medium text-heading"
+                            >Username</label
+                        >
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="bg-neutral-secondary-soft border border-default text-heading text-sm rounded-base focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 placeholder-gray-400"
+                            placeholder="Alex"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            for="password"
+                            class="block mb-2 text-sm font-medium text-heading"
+                            >Password</label
+                        >
+                        <div class="relative">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="bg-neutral-secondary-soft border border-default text-heading text-sm rounded-base focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 block w-full p-2.5 pr-10 placeholder-gray-400"
+                                placeholder="*****"
+                                required
+                            />
+                            <button
+                                type="button"
+                                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 toggle-password"
+                                data-target="password"
+                            >
+                                <svg
+                                    class="w-5 h-5 eye-icon"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"
+                                    />
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                    />
+                                </svg>
+                                <svg
+                                    class="w-5 h-5 eye-slash-icon hidden"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3.933 13.909A4.357 4.357 0 0 1 3 12c0-1 4-6 9-6m7.6 3.8A5.068 5.068 0 0 1 21 12c0 1-3 6-9 6-.314 0-.62-.014-.918-.04M5 19 19 5m-4 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-300 font-medium rounded-base text-sm px-5 py-2.5 transition-colors focus:outline-none mt-2"
+                    >
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <script src="../js/utils/alert.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/auth.js"></script>
+    </body>
+</html>
