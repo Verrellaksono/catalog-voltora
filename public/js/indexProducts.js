@@ -46,11 +46,13 @@ function renderCategoryButtons() {
     const allBtn = document.createElement("button");
     allBtn.type = "button";
     allBtn.textContent = "All";
-    
+
     if (selectedCategoryId === null) {
-        allBtn.className = "text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
+        allBtn.className =
+            "text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
     } else {
-        allBtn.className = "text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
+        allBtn.className =
+            "text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
     }
 
     allBtn.addEventListener("click", () => {
@@ -68,9 +70,11 @@ function renderCategoryButtons() {
         btn.textContent = cat.name;
 
         if (selectedCategoryId === cat.id) {
-            btn.className = "text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
+            btn.className =
+                "text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
         } else {
-            btn.className = "text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
+            btn.className =
+                "text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-xs px-3 py-1.5 md:text-sm md:px-4 md:py-2.5 focus:outline-none transition-colors cursor-pointer";
         }
 
         btn.addEventListener("click", () => {
@@ -88,9 +92,10 @@ function renderProducts() {
     if (!listContainer) return;
 
     // Filter products
-    const filteredProducts = selectedCategoryId === null
-        ? allProducts
-        : allProducts.filter(p => p.category_id === selectedCategoryId);
+    const filteredProducts =
+        selectedCategoryId === null
+            ? allProducts
+            : allProducts.filter((p) => p.category_id === selectedCategoryId);
 
     if (filteredProducts.length === 0) {
         listContainer.innerHTML = `
@@ -113,7 +118,8 @@ function renderProducts() {
         const imgPath = product.image ? product.image : "./images/fan.jpg";
 
         const card = document.createElement("div");
-        card.className = "bg-neutral-primary-soft block border border-default rounded-base shadow-xs w-44 md:w-72 overflow-hidden flex flex-col justify-between";
+        card.className =
+            "bg-neutral-primary-soft block border border-default rounded-base shadow-xs w-full overflow-hidden flex flex-col justify-between";
         card.innerHTML = `
             <div>
                 <img
@@ -126,7 +132,7 @@ function renderProducts() {
                         <h3 class="text-lg md:text-xl font-semibold text-heading text-left truncate" title="${product.name}">
                             ${product.name}
                         </h3>
-                        <p class="text-body font-medium text-justify text-sm md:text-base leading-relaxed line-clamp-3 text-ellipsis overflow-hidden" title="${product.description || ''}">
+                        <p class="text-body font-medium text-justify text-sm md:text-base leading-relaxed line-clamp-3 text-ellipsis overflow-hidden" title="${product.description || ""}">
                             ${product.description || "-"}
                         </p>
                     </div>
