@@ -2,26 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTargetImage = document.getElementById("modal-target-image");
     const productImages = document.querySelectorAll(".product-card-img");
 
-    productImages.forEach((img) => {
-        img.addEventListener("click", () => {
-            const imageSrc = img.getAttribute("src");
+    if (modalTargetImage && productImages.length > 0) {
+        productImages.forEach((img) => {
+            img.addEventListener("click", () => {
+                const imageSrc = img.getAttribute("src");
 
-            if (imageSrc) {
-                modalTargetImage.setAttribute("src", imageSrc);
+                if (imageSrc) {
+                    modalTargetImage.setAttribute("src", imageSrc);
 
-                const modalElement = document.getElementById(
-                    "product-image-modal",
-                );
-                if (typeof Modal !== "undefined") {
-                    const flowbiteModal = new Modal(modalElement);
-                    flowbiteModal.show();
-                } else {
-                    modalElement.classList.remove("hidden");
-                    modalElement.classList.add("flex");
+                    const modalElement = document.getElementById(
+                        "product-image-modal",
+                    );
+                    if (typeof Modal !== "undefined") {
+                        const flowbiteModal = new Modal(modalElement);
+                        flowbiteModal.show();
+                    } else {
+                        modalElement.classList.remove("hidden");
+                        modalElement.classList.add("flex");
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 
     // Toggle Password Visibility
     document.querySelectorAll('.toggle-password').forEach(button => {

@@ -291,34 +291,85 @@
             </div>
         </div>
 
-        <!-- Modals Image Product -->
+        <!-- Product Detail Modal -->
         <div
-            id="product-image-modal"
+            id="product-detail-modal"
             tabindex="-1"
             aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50 justify-center items-center w-full h-full bg-black/80 backdrop-blur-sm"
+            class="hidden fixed inset-0 z-50 justify-center items-center w-full h-full bg-black/60 backdrop-blur-sm p-4 transition-all duration-300"
         >
+            <!-- Modal Box -->
             <div
-                class="relative p-4 w-full max-w-4xl max-h-full flex flex-col items-center"
+                class="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] md:max-h-[85vh] overflow-hidden flex flex-col md:flex-row transform scale-95 opacity-0 transition-all duration-300"
+                id="product-detail-content"
             >
-                <!-- Konten Utama Modal -->
-                <div
-                    class="relative bg-transparent rounded-base shadow-sm max-w-fit"
-                >
-                    <!-- Wadah Gambar yang akan diisi secara dinamis oleh JavaScript -->
-                    <div
-                        class="overflow-hidden flex items-center justify-center"
+                <!-- Left Side: Image Container -->
+                <div class="w-full md:w-1/2 bg-gray-50 flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-100 relative min-h-[200px] sm:min-h-[300px] md:min-h-[400px] overflow-hidden">
+                    <img
+                        id="modal-detail-image"
+                        src=""
+                        alt="Product Image"
+                        class="w-full h-auto transition-transform duration-300 hover:scale-105"
+                    />
+                </div>
+
+                <!-- Right Side: Product Info -->
+                <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between relative bg-white">
+                    <!-- Close button in the top-right corner of right side -->
+                    <button
+                        id="close-detail-modal"
+                        type="button"
+                        class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-full p-2 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 cursor-pointer"
                     >
-                        <img
-                            id="modal-target-image"
-                            src=""
-                            alt="Preview Produk"
-                            class="max-w-full max-h-[80vh] rounded-base object-contain shadow-2xl"
-                        />
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+
+                    <div class="flex-1 flex flex-col justify-start">
+                        <!-- Category Badge -->
+                        <span
+                            id="modal-detail-category"
+                            class="self-start text-[10px] md:text-xs font-bold tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-full uppercase mb-3 border border-cyan-100"
+                        >
+                            Category
+                        </span>
+
+                        <!-- Product Title -->
+                        <h3
+                            id="modal-detail-name"
+                            class="text-xl md:text-3xl font-extrabold text-gray-900 mb-2 leading-tight pr-6"
+                        >
+                            Product Name
+                        </h3>
+
+                        <!-- Price Tag -->
+                        <div
+                            id="modal-detail-price"
+                            class="text-lg md:text-2xl font-bold text-cyan-600 mb-5"
+                        >
+                            Rp0
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="border-gray-100 mb-4" />
+
+                        <!-- Description Heading -->
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                            Description
+                        </h4>
+
+                        <!-- Description Text Container (scrollable) -->
+                        <div class="overflow-y-auto max-h-[220px] md:max-h-[300px] pr-2 text-gray-600 text-sm md:text-base leading-relaxed scrollbar-thin scrollbar-thumb-cyan-500 scrollbar-track-gray-50">
+                            <p id="modal-detail-description" class="whitespace-pre-line text-justify text-xs md:text-sm">
+                                Product description details will be loaded here.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <!-- Script -->
         <script src="/js/main.js"></script>
